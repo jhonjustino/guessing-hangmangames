@@ -1,9 +1,11 @@
+import random
 def jogar():
     #A palavra secreta que o jogador irá adivinhar
-    WORD = input("Digite a palavra que a pessoa vai ter que adivinhar:")
-    secretWordReal = WORD
-    #Ignora letra maiúscula e minuscula
-    secretWord = secretWordReal.casefold()
+    animals = ['gato','cachorro', 'cavalo', 'vaca', 'elefante', 'crocodilo', 'galinha']
+    fruits = ['banana', 'uva', 'abacaxi', 'maçã', 'jabuticaba', 'melancia', 'morango']
+    words = animals, fruits
+    #Seleciona uma variável aleatória e depois dentro da variável seleciona a palavra aleatória dela
+    secretWord = random.choice(random.choices(words, weights=map(len,words))[0])
     lettersGuessed = ""
 
     #O número de turnos antes do jogador perder
@@ -12,6 +14,7 @@ def jogar():
     #Nível de dificuldade do jogo
     print("Qual nível de dificuldade?")
     print("(1) Fácil (2) Médio (3) Difícil")
+    print(secretWord)
 
     nivel = int(input("Defina o nível: "))
     #Define a quantidade de falhas que pode ter de acordo com o nível
