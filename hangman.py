@@ -14,7 +14,6 @@ def jogar():
     #Nível de dificuldade do jogo
     print("Qual nível de dificuldade?")
     print("(1) Fácil (2) Médio (3) Difícil")
-    print(secretWord)
 
     nivel = int(input("Defina o nível: "))
     #Define a quantidade de falhas que pode ter de acordo com o nível
